@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react' 
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
   const { continents } = useSelector((state) => state.country)
@@ -8,7 +9,7 @@ const Main = () => {
     <div>
       <h1>Main page</h1>
       <ul>
-        {continents.map((cont, idx) => <li key={idx}>{cont}</li>)}
+        {continents.map((cont, idx) => <li key={idx}><Link to={`/${cont}`}>{cont}</Link></li>)}
       </ul>
     </div>
   )

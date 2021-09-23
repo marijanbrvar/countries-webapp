@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const Navbar = () => {
+const Navbar = (props) => {
   const {currentContinent } = useSelector((state) => state.country);
   return (
     <div>
