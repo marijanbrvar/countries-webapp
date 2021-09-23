@@ -1,26 +1,57 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { apiCallBegan } from "./api";
 
-const initialState = {
-  continents: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
-  currentContinent: 'Europe',
-  countryList: null,
-  currentCountry: null
-}
-
-export const loadCountries = createAsyncThunk('fetchData', async (continent) => {
-  const res = await fetch(`https://restcountries.com/v2/continent/${continent}`)
-  const data = res.json();
-
-  return data
-});
-
-export const countrySlice = createSlice({
+export const slice = createSlice({
   name: 'country',
-  initialState,
-  reducers: {}
+  initialState: {
+    continents: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
+    currentContinent: '',
+    list: [],
+    currentCountry: null,
+    loading: false,
+  },
+  reducers: {
+    countryRequested: (country) => {
+      country.loading = true;
+    },
+    countryReceived: (country, action) => {
+      country.list = action.payload;
+      country.loading = false;
+    },
+    countryRequestFailed: (country) => {
+      country.loading = false;
+    },
+    setCurrentContinent: (continent, action) => {
+      continent.currentContinent = action.payload
+    },
+    setCurrentCountry: (country, action) => {
+      country.loading = true;
+      const current = country.list.findIndex((state) => state.alpha2Code === action.payload)
+      country.currentCountry = country.list[current];
+      country.loading = false;
+    }
+  }
 })
 
 
-// export {} = countrySlice.actions
+export const { 
+  countryRequested, 
+  countryReceived,
+  countryRequestFailed,
+  setCurrentContinent,
+  setCurrentCountry,
+ } = slice.actions
 
-export default countrySlice.reducer;
+export default slice.reducer;
+
+
+export const loadCountries = (url) => (dispatch, getState) => {
+  return dispatch(
+    apiCallBegan({
+      url,
+      onStart: countryRequested.type,
+      onSuccess: countryReceived.type,
+      onErrorL: countryRequestFailed.type
+    })
+  )
+}
