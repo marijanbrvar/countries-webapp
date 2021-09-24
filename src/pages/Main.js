@@ -7,10 +7,18 @@ const Main = () => {
   const { continents } = useSelector((state) => state.country);
 
   return (
-    <div>
-      <h1>Main page</h1>
-      <ul>
-        {continents.map((cont, idx) => <li key={idx}><Link to={`/${cont}`}>{cont}</Link></li>)}
+    <div className="main">
+      <h3>Select Continent</h3>
+      <ul className="section">
+        {continents.map((cont, idx) => (
+          <li key={idx} className="list-item">
+            <Link to={`/${cont}`}>
+              <div>
+                <h2>{cont}</h2>
+              </div>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

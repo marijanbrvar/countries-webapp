@@ -10,16 +10,15 @@ const Navbar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { currentContinent, currentCountry } = useSelector((state) => state.country);
-  // console.log('location', history.location.pathname);
+
   const goBack = () => {
     if (history.location.pathname === '/') { return clearCurrentContry(); }
     dispatch(setCurrentContinent(null));
     return history.push('/');
-    // console.log(history.location.pathname === '/');
   };
 
   return (
-    <div>
+    <nav>
       <h1>
         {currentContinent !== null && <i onClick={() => goBack()} className="material-icons">chevron_left</i>}
         {
@@ -30,9 +29,11 @@ const Navbar = () => {
             : currentContinent
         }
       </h1>
-      <i className="material-icons mx-1">mic</i>
-      <i className="material-icons">settings</i>
-    </div>
+      <div>
+        <i className="material-icons mx-1">mic</i>
+        <i className="material-icons">settings</i>
+      </div>
+    </nav>
   );
 };
 

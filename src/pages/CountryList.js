@@ -18,7 +18,7 @@ const CountryList = (props) => {
 
   return (
     <div>
-      <h1>Country List page</h1>
+      <h3>Country List page</h3>
       <ul>
         {countries.map((country) => <li key={country.alpha2Code}><Link to={`/${continent}/${country.alpha2Code}`}>{country.name}</Link></li>)}
       </ul>
