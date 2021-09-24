@@ -13,8 +13,8 @@ describe('Homepage tests', () => {
   });
 });
 
-test('Bitcoin click', async () => {
+test('Continent click', async () => {
   render(<Provider store={store()}><App /></Provider>);
   userEvent.click(await screen.findByText('Europe'));
-  expect(await screen.findByText('Country List page')).toBeInTheDocument;
+  expect(await screen.findByText('Loading...')).toBeInTheDocument;
 });

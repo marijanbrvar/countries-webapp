@@ -9,18 +9,20 @@ import { loadCountries, setCurrentContinent } from '../redux/country';
 const CountryList = (props) => {
   const { continent } = props.match.params;
   const dispatch = useDispatch();
-  const countries = useSelector((state) => state.country.list);
+  const { list, loading } = useSelector((state) => state.country);
 
   useEffect(() => {
     dispatch(setCurrentContinent(continent));
     dispatch(loadCountries(`/${continent}`));
   }, []);
 
+  if (loading) return <p>Loading...</p>;
+
   return (
     <div className="main">
       <h3>Country List page</h3>
       <ul className="section">
-        {countries.map((country) => (
+        {list.map((country) => (
           <li className="list-item" key={country.alpha2Code}>
             <Link to={`/${continent}/${country.alpha2Code}`}>
               <div>

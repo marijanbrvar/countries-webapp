@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-nested-ternary */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -9,15 +8,13 @@ import { setCurrentContinent, clearCurrentContry } from '../redux/country';
 const Navbar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { currentContinent, currentCountry } = useSelector((state) => state.country);
+  const { currentContinent } = useSelector((state) => state.country);
 
   const goBack = () => {
     if (history.location.pathname === '/') { return clearCurrentContry(); }
     dispatch(setCurrentContinent(null));
     return history.push('/');
   };
-
-  const truncate = (str) => (str.length > 10 ? `${str.substring(0, 7)}...` : str);
 
   return (
     <nav>
@@ -26,9 +23,7 @@ const Navbar = () => {
         {
         currentContinent === null
           ? 'Countries App'
-          : currentCountry !== null
-            ? truncate(currentCountry.name)
-            : currentContinent
+          : currentContinent
         }
       </h1>
       <div>

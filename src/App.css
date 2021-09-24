@@ -97,3 +97,24 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.list-card .list-item {
+  padding: 0 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--primary-color-400);
+}
+
+.list-card .list-item:nth-child(2n+1) {
+  background-color: var(--primary-color-600);
+}
+
+.list-card .list-item p {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.list-card .list-item > div {
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
