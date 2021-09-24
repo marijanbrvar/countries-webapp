@@ -17,6 +17,8 @@ const Navbar = () => {
     return history.push('/');
   };
 
+  const truncate = (str) => (str.length > 10 ? `${str.substring(0, 7)}...` : str);
+
   return (
     <nav>
       <h1>
@@ -25,7 +27,7 @@ const Navbar = () => {
         currentContinent === null
           ? 'Countries App'
           : currentCountry !== null
-            ? currentCountry.name
+            ? truncate(currentCountry.name)
             : currentContinent
         }
       </h1>
