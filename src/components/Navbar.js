@@ -7,7 +7,7 @@ const Navbar = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const { currentContinent, currentCountry } = useSelector((state) => state.country);
-  console.log('location', history.location.pathname);
+  // console.log('location', history.location.pathname);
   const goBack = () => {
     
     history.push('/');
