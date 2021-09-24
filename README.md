@@ -16,7 +16,7 @@
 [Live](https://marijanbrvar.github.io/countries-webapp/#/Europe)
 
 ### Presentation video
-[Video](https://www.loom.com/share/c0ffcd16a6984ceab50eb1a04735d9c1)
+[Video](https://www.loom.com/share/8ce2301e8915471eb474ebb8e1ebd420)
 
 ### Prerequisites
 -Chrome browser

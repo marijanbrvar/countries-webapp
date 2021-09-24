@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<nav>
+  <div
+    className="navbar"
+  >
+    <a
+      className="brand-logo left"
+      href="/"
+      onClick={[Function]}
+    >
+      <div>
+        European Countries
+      </div>
+    </a>
+    <ul
+      className="right"
+    >
+      <li>
+        <i
+          className="material-icons mx-1"
+        >
+          mic
+        </i>
+      </li>
+      <li>
+        <i
+          className="material-icons"
+        >
+          settings
+        </i>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
+exports[`renders navbar`] = `
+<nav>
+  <div class="navbar">
+    <a class="brand-logo left" href="/">
+      <div>European Countries</div>
+    </a>
+    <ul class="right">
+      <li><i class="material-icons mx-1">mic</i></li>
+      <li><i class="material-icons">settings</i></li>
+    </ul>
+    </div>
+  </nav>
+`;
