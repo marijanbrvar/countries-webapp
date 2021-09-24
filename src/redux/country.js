@@ -5,7 +5,7 @@ export const slice = createSlice({
   name: 'country',
   initialState: {
     continents: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
-    currentContinent: '',
+    currentContinent: null,
     list: [],
     currentCountry: null,
     loading: false,
@@ -24,6 +24,9 @@ export const slice = createSlice({
     setCurrentContinent: (continent, action) => {
       continent.currentContinent = action.payload
     },
+    clearCurrentContry: (country) => {
+      country.currentCountry = null
+    },
     setCurrentCountry: (country, action) => {
       country.loading = true;
       const current = country.list.findIndex((state) => state.alpha2Code === action.payload)
@@ -40,6 +43,7 @@ export const {
   countryRequestFailed,
   setCurrentContinent,
   setCurrentCountry,
+  clearCurrentContry,
  } = slice.actions
 
 export default slice.reducer;

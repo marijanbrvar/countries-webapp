@@ -11,7 +11,6 @@ const Country = (props) => {
   }, [])
   
   const cntry = useSelector((state) => state.country.currentCountry);
-  console.log(cntry);
 
   return (
     <div>

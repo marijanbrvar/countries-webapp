@@ -16,7 +16,6 @@ const CountryList = (props) => {
     dispatch(loadCountries(`/${continent}`))
   }, [])
 
-  console.log(countries);
   return (
     <div>
       <h1>Country List page</h1>
