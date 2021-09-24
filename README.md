@@ -13,10 +13,10 @@
 -React and Redux
 
 ### Live Demo
-[Live](https://marijanbrvar.github.io/countries-rest/)
+[Live](https://marijanbrvar.github.io/countries-webapp/#/Europe)
 
 ### Presentation video
-[Video](https://www.loom.com/share/755efe5569df4154b8b5700eb2bb52fa)
+[Video](https://www.loom.com/share/c0ffcd16a6984ceab50eb1a04735d9c1)
 
 ### Prerequisites
 -Chrome browser
@@ -25,7 +25,7 @@
 
 ### Getting Started
 To get a local copy up and running, follow these simple example steps.
-`git clone git@github.com:marijanbrvar/countries-rest.git && cd countries-rest`
+`git clone git@github.com:marijanbrvar/countries-webapp.git && cd countries-webapp`
 `run npm install`
 ### Setup and Run
 To run code locally, please follow steps belove
