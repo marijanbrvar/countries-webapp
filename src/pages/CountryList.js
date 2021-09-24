@@ -17,10 +17,26 @@ const CountryList = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="main">
       <h3>Country List page</h3>
-      <ul>
-        {countries.map((country) => <li key={country.alpha2Code}><Link to={`/${continent}/${country.alpha2Code}`}>{country.name}</Link></li>)}
+      <ul className="section">
+        {countries.map((country) => (
+          <li className="list-item" key={country.alpha2Code}>
+            <Link to={`/${continent}/${country.alpha2Code}`}>
+              <div>
+                <h2>{country.name}</h2>
+                <p>
+                  Capital:
+                  {country.capital}
+                </p>
+                <p>
+                  Population:
+                  {country.population}
+                </p>
+              </div>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
