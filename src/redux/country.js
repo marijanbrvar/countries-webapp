@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { apiCallBegan } from "./api";
+/* eslint-disable no-param-reassign */
+import { createSlice } from '@reduxjs/toolkit';
+import { apiCallBegan } from './api';
 
 export const slice = createSlice({
   name: 'country',
@@ -22,40 +23,36 @@ export const slice = createSlice({
       country.loading = false;
     },
     setCurrentContinent: (continent, action) => {
-      continent.currentContinent = action.payload
+      continent.currentContinent = action.payload;
     },
     clearCurrentContry: (country) => {
-      country.currentCountry = null
+      country.currentCountry = null;
     },
     setCurrentCountry: (country, action) => {
       country.loading = true;
-      const current = country.list.findIndex((state) => state.alpha2Code === action.payload)
+      const current = country.list.findIndex((state) => state.alpha2Code === action.payload);
       country.currentCountry = country.list[current];
       country.loading = false;
-    }
-  }
-})
+    },
+  },
+});
 
-
-export const { 
-  countryRequested, 
+export const {
+  countryRequested,
   countryReceived,
   countryRequestFailed,
   setCurrentContinent,
   setCurrentCountry,
   clearCurrentContry,
- } = slice.actions
+} = slice.actions;
 
 export default slice.reducer;
 
-
-export const loadCountries = (url) => (dispatch, getState) => {
-  return dispatch(
-    apiCallBegan({
-      url,
-      onStart: countryRequested.type,
-      onSuccess: countryReceived.type,
-      onErrorL: countryRequestFailed.type
-    })
-  )
-}
+export const loadCountries = (url) => (dispatch) => dispatch(
+  apiCallBegan({
+    url,
+    onStart: countryRequested.type,
+    onSuccess: countryReceived.type,
+    onErrorL: countryRequestFailed.type,
+  }),
+);

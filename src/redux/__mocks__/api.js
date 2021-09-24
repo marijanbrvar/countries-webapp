@@ -1,9 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import countries from './countries';
-import { GET_COUNTRIES } from '../actions/types';
+import { countryReceived } from '../country';
 
 export const getCountries = (countries) => ({
-  type: GET_COUNTRIES,
+  type: countryReceived.type,
   payload: countries,
 });
 

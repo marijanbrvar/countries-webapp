@@ -1,10 +1,13 @@
-import axios from "axios";
-import * as actions from "../api";
+/* eslint-disable consistent-return */
+import axios from 'axios';
+import * as actions from '../api';
 
-const api = ({ dispatch }) => next => async action => {
+const api = ({ dispatch }) => (next) => async (action) => {
   if (action.type !== actions.apiCallBegan.type) return next(action);
 
-  const { url, method, data, onStart, onSuccess, onError } = action.payload;
+  const {
+    url, method, data, onStart, onSuccess, onError,
+  } = action.payload;
 
   if (onStart) dispatch({ type: onStart });
 
@@ -12,10 +15,10 @@ const api = ({ dispatch }) => next => async action => {
 
   try {
     const response = await axios.request({
-      baseURL: "https://restcountries.com/v2/continent",
+      baseURL: 'https://restcountries.com/v2/continent',
       url,
       method,
-      data
+      data,
     });
     // General
     dispatch(actions.apiCallSuccess(response.data));
