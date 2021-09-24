@@ -68,34 +68,12 @@ img {
   width: 100%;
 }
 
-.main h3 {
-  background-color: var(--primary-color-900);
-  color: white;
-  font-weight: 200;
-  font-size: 1rem;
-  padding-left: 1rem;
-}
-
 .main .list-item {
   min-height: 200px;
   background-color: var(--primary-color-400);
   display: flex;
   align-items: flex-start;
   padding: 1rem;
-}
-
-.main .list-item h2 {
-  line-height: 1em;
-}
-
-.main .list-item:nth-child(4n+1),
-.main .list-item:nth-child(4n+4) {
-  background-color: var(--primary-color-600);
-}
-
-.section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .list-card .list-item {
@@ -117,4 +95,26 @@ img {
   height: 3rem;
   font-size: 1.5rem;
   font-weight: 200;
+}
+
+.main h3 {
+  background-color: var(--primary-color-900);
+  color: white;
+  font-weight: 200;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.main .list-item h2 {
+  line-height: 1em;
+}
+
+.main .list-item:nth-child(4n+1),
+.main .list-item:nth-child(4n+4) {
+  background-color: var(--primary-color-600);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
