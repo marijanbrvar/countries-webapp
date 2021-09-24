@@ -39,7 +39,7 @@ nav {
 }
 
 nav i {
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
 
 nav h1 {
@@ -68,9 +68,6 @@ img {
   width: 100%;
 }
 
-.main {
-}
-
 .main h3 {
   background-color: var(--primary-color-900);
   color: white;
@@ -87,7 +84,8 @@ img {
   padding: 1rem;
 }
 
-.main .list-item:nth-child(4n+1), .list-item:nth-child(4n+4) {
+.main .list-item:nth-child(4n+1),
+.main .list-item:nth-child(4n+4) {
   background-color: var(--primary-color-600);
 }
 
